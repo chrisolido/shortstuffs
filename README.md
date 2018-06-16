@@ -1,7 +1,3 @@
 # shortstuffs
 
-Terraform driven 3 tier infra.
-
-provider "aws" {
-  region = "ap-southeast-1"
-}
+Plan to have a 3 tier infra.
