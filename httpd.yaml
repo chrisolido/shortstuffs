@@ -3,7 +3,7 @@
 - hosts: all
   tasks:
     - name: install lamp stack
-      sudo: yes
+      become: yes
       yum: name={{ item }} state=present
       with_items:
         - httpd
@@ -18,7 +18,7 @@
 
     - name: start services
       service: name={{ item }} state=running enabled=yes
-      sudo: yes
+      become: yes
       with_items:
         - httpd
         - mariadb
@@ -27,4 +27,14 @@
     - name: deploy index.html
       sudo: yes
       copy: src=/tmp/lamp/index.html dest=/var/www/html/index.html
+      become: yes
       tags: setup
+    
+    - name: install python
+      yum:
+        name: python
+        state: latest
+      become: yes
+      tags: setup
+
+    
