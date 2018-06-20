@@ -14,14 +14,17 @@
         - php
         - php-devel
         - php-mysql
+      tags: setup
 
     - name: start services
       service: name={{ item }} state=running enabled=yes
       sudo: yes
       with_items:
         - httpd
-        - mysqld
+        - mariadb
+      tags: setup
 
     - name: deploy index.html
       sudo: yes
       copy: src=/etc/ansible/content/lamp/index.html dest=/var/www/html/index.html
+      tags: setup
