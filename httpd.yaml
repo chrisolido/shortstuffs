@@ -1,15 +1,27 @@
 ---
-#Setup tags
-- name: This sets up an httpd webserver
-  hosts: all
+# Setup LAMP Stack
+- hosts: WEB-SERVERS
   tasks:
-  - name: installthe httpd rpm
-    yum: 
-      name: httpd
-      state: latest
-    tags: setup
-  - name: start the httpd service
-    service: 
-      name: httpd 
-      state: started
-    tags: setup
+    - name: install lamp stack
+      sudo: yes
+      yum: name={{ item }} state=present
+      with_items:
+        - httpd
+        - httpd-devel
+        - mysql
+        - mysql-server
+        - mysql-devel
+        - php
+        - php-devel
+        - php-mysql
+
+    - name: start services
+      service: name={{ item }} state=running enabled=yes
+      sudo: yes
+      with_items:
+        - httpd
+        - mysqld
+
+    - name: deploy index.html
+      sudo: yes
+      copy: src=/etc/ansible/content/lamp/index.html dest=/var/www/html/index.html
