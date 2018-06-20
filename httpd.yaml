@@ -2,14 +2,13 @@
 - name: This sets up an httpd webserver
   hosts: all
   tasks:
-
-- name: installthe httpd rpm
-  yum: 
-    name=httpd
-    state: latest
-  tags: setup
-- name: start the httpd service
-  service: 
-    name=httpd 
-    state=started
-  tags: setup
+  - name: installthe httpd rpm
+    yum: 
+      name=httpd
+      state: latest
+    tags: setup
+  - name: start the httpd service
+    service: 
+      name=httpd 
+      state=started
+    tags: setup
