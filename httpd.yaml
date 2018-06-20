@@ -5,11 +5,11 @@
   tasks:
   - name: installthe httpd rpm
     yum: 
-      name=httpd
+      name: httpd
       state: latest
     tags: setup
   - name: start the httpd service
     service: 
-      name=httpd 
-      state=started
+      name: httpd 
+      state: started
     tags: setup
