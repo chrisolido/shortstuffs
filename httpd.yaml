@@ -8,9 +8,9 @@
       with_items:
         - httpd
         - httpd-devel
-        - mysql
-        - mysql-server
-        - mysql-devel
+        - mariadb.x86_64
+        - mariadb-server.x86_64
+        - mariadb-devel.x86_64
         - php
         - php-devel
         - php-mysql
