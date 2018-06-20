@@ -26,5 +26,5 @@
 
     - name: deploy index.html
       sudo: yes
-      copy: src=/etc/ansible/content/lamp/index.html dest=/var/www/html/index.html
+      copy: src=/tmp/lamp/index.html dest=/var/www/html/index.html
       tags: setup
