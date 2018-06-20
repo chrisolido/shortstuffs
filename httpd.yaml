@@ -27,7 +27,6 @@
       tags: setup
 
     - name: deploy index.html
-      sudo: yes
       copy: src=/tmp/lamp/index.html dest=/var/www/html/index.html
       become: yes
       tags: setup
