@@ -22,6 +22,8 @@
       with_items:
         - httpd
         - mariadb
+        - telnet
+        - zip
       tags: setup
 
     - name: deploy index.html
