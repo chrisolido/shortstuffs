@@ -1,6 +1,6 @@
 ---
 # Setup LAMP Stack
-- hosts: WEB-SERVERS
+- hosts: all
   tasks:
     - name: install lamp stack
       sudo: yes
