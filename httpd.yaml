@@ -1,4 +1,5 @@
 ---
+#Setup tags
 - name: This sets up an httpd webserver
   hosts: all
   tasks:
