@@ -26,14 +26,10 @@
         - mariadb
       tags: setup
 
-    - name: deploy index.html
-      copy: src=/tmp/lamp/index.html dest=/var/www/html/index.html
-      become: yes
-      tags: setup
-    
-    - name: install python
-      yum:
-        name: python
-        state: latest
+    - name: deploy index html
+      copy: 
+        src: file/index.html 
+        dest: /var/www/html/index.html
+        mode: 0755
       become: yes
       tags: setup
