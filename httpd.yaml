@@ -33,3 +33,11 @@
         mode: 0755
       become: yes
       tags: setup
+
+- name: test module ansible
+  yum:
+    name: install python.
+    state: latest
+  become: yes
+  tags: setup
+
